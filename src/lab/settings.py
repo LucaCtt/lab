@@ -16,5 +16,3 @@ class Settings(BaseSettings):
     top_k: int = 20
     presence_penalty: float = 2.0
     repetition_penalty: float = 1.0
-
-    stream: bool = True

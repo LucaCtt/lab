@@ -30,7 +30,7 @@ def main():
         extra_body={ # Please disable thinking to get responses in a reasonable time frame
             "chat_template_kwargs": {"enable_thinking": False}
         },  
-        stream=settings.stream
+        stream=True, # Set to False to disable streaming and get the full response at once
     )
 
     # If streaming is disabled, the response will be a ModelResponse object. 
