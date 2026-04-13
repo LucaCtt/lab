@@ -38,7 +38,7 @@ def main():
         print(response.choices[0].message.content)
         return
 
-    # If streaming is enabled, it will be an iterator of ModelResponse objects.
+    # If streaming is enabled, it will be an iterator of ModelResponseStream objects.
     for chunk in response:
         print(chunk.choices[0].delta.content or "", end="", flush=True)
 

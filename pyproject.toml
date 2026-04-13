@@ -1,7 +1,7 @@
 [project]
 name = "lab"
 version = "0.1.0"
-description = "Add your description here"
+description = "Lab"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
@@ -9,7 +9,7 @@ dependencies = [
     "numpydoc>=1.10.0",
     "pydantic-settings>=2.13.1",
     "rdflib>=7.6.0",
-    "streamlit>=1.56.0",
+    "sentence-transformers>=5.4.0",
 ]
 
 [build-system]

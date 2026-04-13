@@ -16,3 +16,8 @@ class Settings(BaseSettings):
     top_k: int = 20
     presence_penalty: float = 2.0
     repetition_penalty: float = 1.0
+
+    # External endpoints
+    wikidata_endpoint: str = "https://query.wikidata.org/sparql"
+    wikidata_user_agent: str = "UniBS-Lab/1.0 (university lab; non-commercial)"
+    wikidata_accept: str = "application/sparql-results+json"
