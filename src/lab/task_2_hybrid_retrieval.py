@@ -7,8 +7,7 @@ graph built in Task 2, then compare their outputs for the same question.
 Retrieval strategies
 ---
 A) SPARQL retrieval: precise, structured, requires well-formed query
-B) Text retrieval: keyword/regex match over literal values (FILTER + REGEX)
-C) Embedding retrieval: semantic similarity between question and stored labels
+B) Embedding retrieval: semantic similarity between question and stored labels
 
 Instructions
 ---
@@ -30,7 +29,7 @@ from lab.task_1_sparql import answer  # reusing answer() from Task 1
 
 
 def _cosine_similarity(a: list[float], b: list[float]) -> float:
-    """Compute cosine similarity between two vectors."""
+    """OPTIONAL. Compute cosine similarity between two vectors."""
     dot = sum(x * y for x, y in zip(a, b))
     norm_a = math.sqrt(sum(x * x for x in a))
     norm_b = math.sqrt(sum(x * x for x in b))
@@ -40,7 +39,7 @@ def _cosine_similarity(a: list[float], b: list[float]) -> float:
 
 
 def _get_embedding(text: str) -> list[float]:
-    """Get an embedding vector for a text string via LiteLLM.
+    """OPTIONAL. Get an embedding vector for a text string via LiteLLM.
 
     Falls back to a zero-vector on failure (e.g. if the proxy has no embedding model).
     """
@@ -55,14 +54,14 @@ def _get_embedding(text: str) -> list[float]:
 def retrieve_sparql(graph: Graph, query: str) -> str: ...  # TODO
 
 
-def retrieve_text(graph: Graph, keyword: str) -> str: ...  # TODO
+def retrieve_text(graph: Graph, question: str) -> str: ...  # TODO
 
 
-def retrieve_embedding(graph: Graph, question: str) -> str: ...  # TODO
+def retrieve_embedding(graph: Graph, question: str) -> str: ...  # OPTIONAL
 
 
 def compare(graph: Graph, question: str) -> None:
-    """Run all three retrieval strategies on the same question and print results."""
+    """Run all retrieval strategies on the same question and print results."""
     print(f"\n{'=' * 60}")
     print(f"QUESTION: {question}")
     print("=" * 60)
@@ -70,7 +69,7 @@ def compare(graph: Graph, question: str) -> None:
     for label, fn in [
         ("A) SPARQL retrieval", retrieve_sparql),
         ("B) Text retrieval", retrieve_text),
-        ("C) Embedding retrieval", retrieve_embedding),
+        # ("C) Embedding retrieval", retrieve_embedding),
     ]:
         print(f"\n--- {label} ---")
         try:

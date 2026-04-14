@@ -20,15 +20,13 @@ Instructions
 """
 
 from rdflib import Graph
-from lab.task_3_hybrid_retrieval import (
+from lab.task_2_hybrid_retrieval import (
     retrieve_sparql,
-    retrieve_text,
     retrieve_embedding,
 )
 
 functions = {
     "sparql_retrieve": retrieve_sparql,
-    "text_retrieve": retrieve_text,
     "embedding_retrieve": retrieve_embedding,
 }
 
