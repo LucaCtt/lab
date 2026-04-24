@@ -5,7 +5,7 @@ description = "Lab"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "litellm>=1.83.0",
+    "litellm>=1.83.7",
     "numpydoc>=1.10.0",
     "pydantic-settings>=2.13.1",
     "rdflib>=7.6.0",
